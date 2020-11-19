@@ -1,19 +1,15 @@
 document.addEventListener("DOMContentLoaded", function() {
-    console.log("The DOM has loaded");
     
     const counter = document.getElementById("counter")
+    const plus = document.getElementById("plus")
+    const minus = document.getElementById("minus")
+    const heart = document.getElementById("heart")
+    plus.addEventListener("click", increaseTimer)
+    minus.addEventListener("click", decreaseTimer)
+    heart.addEventListener("click", like)
+
     seconds = 0;
     startTimer();
-
-    // function plus(){
-    //         const btn = document.getElementById('plus')
-    //         btn addEventListener('click', increaseTimer)
-    //     }
-
-    // function minus(){
-    //     const btn = document.getElementById('minus')
-    //     btn addEventListener('click', decreaseTimer)
-    // }
 
     function startTimer() {
         timerOn = true;
@@ -111,18 +107,6 @@ const form = document.getElementById("comment-form");
         }
     });
 
-    // Increase Timer Button
-    document.getElementById("plus").addEventListener("click", function() {
-        increaseTimer();
-    });
-
-    // Decrease Timer Button
-    document.getElementById("minus").addEventListener("click", function() {
-        decreaseTimer();
-    });
-
-    // Add event listener to Like button
-    document.getElementById("heart").addEventListener("click", like);
 
     // Add event listener to Comment button
     document.getElementById("comment-form").addEventListener("submit", addComment);
